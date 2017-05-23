@@ -1,0 +1,34 @@
+body {
+    background-color: black;
+}
+
+#field {
+    background-color: black;
+    overflow: hidden;
+    position: absolute;
+    left: 120px;
+    top: 50px;
+    width: 515px;
+    height: 515px;
+}
+
+#points {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    width: 80px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: "Calibri", "Trebuchet MS", sans-serif;
+}
+
+.item {
+    width: 63px;
+    height: 63px;
+    position: absolute;
+}
+
+.selected {
+    opacity: 0.5;
+}
