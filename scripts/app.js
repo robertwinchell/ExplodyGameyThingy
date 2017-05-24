@@ -27,7 +27,7 @@ define(['jquery'], function($) {
 	        for (var x = 0; x < 8; x++) {
 	            field[x] = new Array(8);
 	            for (var y = 0; y < 8; y++) {
-	                field[x][y] = Math.ceil(Math.random() * 6);
+	                field[x][y] = Math.ceil(Math.random() * 7);
 	                self._addPiece(x, y, field[x][y]);
 	            }
 	        }
@@ -172,7 +172,7 @@ define(['jquery'], function($) {
 	            }
 
 	            for (var i = 1; i <= deleted; i++) {
-	                type = Math.ceil(Math.random() * 6);
+	                type = Math.ceil(Math.random() * 7);
 	                field[x][deleted - i] = type;
 	                self._addPiece(x, deleted - i, type, i).animate({ top: '+=' + ((deleted + i + 1) * 64) }, 150 * (deleted + i + 1));
 	                delay = Math.max(delay, 150 * (deleted + i + 1));
