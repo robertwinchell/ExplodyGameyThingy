@@ -1,5 +1,18 @@
 define(['jquery'], function($) {
     
+	var myClick = function() {
+	    var $elem = $(this);
+	    if (self.selectedItem != null) {
+            self.selectedItem.removeClass('selected');
+            self._swap(self.selectedItem, $elem);
+            self.selectedItem = null;
+        } else {
+            self.selectedItem = $elem.addClass('selected');
+        }
+    };
+	
+    //var myClick = function(){};
+
     return {
 
 	 	init: function() {
@@ -18,20 +31,10 @@ define(['jquery'], function($) {
 	                self._addPiece(x, y, field[x][y]);
 	            }
 	        }
+	     self._processField();
+        },
 
-	        self._processField();
 
-	        $('.item').on('click', function() {
-	            var $elem = $(this);
-	            if (self.selectedItem != null) {
-	                self.selectedItem.removeClass('selected');
-	                self._swap(self.selectedItem, $elem);
-	                self.selectedItem = null;
-	            } else {
-	                self.selectedItem = $elem.addClass('selected');
-	            }
-	        });
-	    },
 
 	    _swap: function(elem1, elem2, cancelProcessing) {
 
@@ -67,6 +70,7 @@ define(['jquery'], function($) {
 	        top = top ? (-1 - 2 * top) * 64 : y * 64;
 	        div.css({ top: top + 'px', left: (x * 64) + 'px', backgroundImage: 'url("img/' + type + '.jpg")' });
 	        div.addClass('x' + x).addClass('y' + y).attr('id', ('xy' + x) + y).appendTo('#field');
+            div.on("click", myClick);
 	        return div;
 	    },
 
@@ -135,8 +139,8 @@ define(['jquery'], function($) {
 	        });
 
 	        if (deleted > 0) {
-	            self.points += Math.min(Math.pow(2, deleted - 3), 20 * deleted);
-	            $('#points').html(self.points);
+	            points += Math.min(Math.pow(2, deleted - 3), 20 * deleted);
+	            $('#points').html(points);
 	        }
 
 	        if (deleted > 0) {
