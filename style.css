@@ -6,21 +6,37 @@ body {
     background-color: black;
     overflow: hidden;
     position: absolute;
-    left: 120px;
+    left: 250px;
     top: 50px;
     width: 515px;
     height: 515px;
+    display: none;
 }
 
-#points {
+#gameState {
     position: absolute;
     top: 100px;
     left: 20px;
-    width: 80px;
+    width: 200px;
     text-align: center;
     color: white;
     font-size: 28px;
     font-family: "Calibri", "Trebuchet MS", sans-serif;
+    border:1px solid white;
+    display: none;
+}
+
+#points {
+    position: absolute;
+    top: 300px;
+    left: 20px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: "Calibri", "Trebuchet MS", sans-serif;
+    border:1px solid white;
+    display: none;
 }
 
 .item {
@@ -31,4 +47,98 @@ body {
 
 .selected {
     opacity: 0.5;
+}
+
+#startGame{
+    padding-top: 15%;
+    height: 200px;
+}
+
+#startGame #btnStart{
+    width: 20%;
+    height: 40px;
+    margin-left: 40%;
+    background-color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+#startGame #selectMode{
+    width: 20%;
+    margin-left: 40%;
+    color: white;
+    font-size: 20px;
+}
+
+#startGame #selectLevelMode{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin-left: 5%;
+    display: none;
+}
+
+#startGame #btnStart:hover{
+    background-color: rgb(60,60,60);
+}
+
+#btnHint{
+    position: absolute;
+    top: 450px;
+    left: 20px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: "Calibri", "Trebuchet MS", sans-serif;
+    border:1px solid white;
+    border-radius: 20px;
+    display: none;
+}
+
+#btnShuttle{
+    position: absolute;
+    top: 500px;
+    left: 20px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: "Calibri", "Trebuchet MS", sans-serif;
+    border:1px solid white;
+    border-radius: 20px;
+    display: none;
+}
+
+#btnHint:hover, #btnShuttle:hover{
+    background-color: rgb(60,60,60);
+    cursor: pointer;
+}
+
+#showProgress
+{
+    display: none;
+}
+
+#progress{
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:0 0 0 0;
+    top: 680px;
+    width:96%;
+    height: 5px;
+    background-color: white;
+}
+
+#progress #complete{
+    padding-left:0px;
+    left:0;
+    width:30%;
+    height: 5px;
+    background-color: rgb(0,150,255);
 }

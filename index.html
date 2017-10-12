@@ -6,10 +6,29 @@
 </head>
 
 <body>
+	<div id="startGame">
+		<div id="selectMode">
+			&nbsp;&nbsp;&nbsp;<input type="radio" id="time" name="s_time" checked="true" onclick="setState('selectLevelMode','false')">Time Mode<br>
+			&nbsp;&nbsp;&nbsp;<input type="radio" id="untime" name="s_time" onclick="setState('selectLevelMode','true')">Untime Mode<br>
+			<div id="selectLevelMode">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<input type="radio" id="casual" name="level" checked="true">Casual Mode<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<input type="radio" id="level" name="level">Level Mode<br>
+			</div>
+		</div>
+		<br>
+		<button id="btnStart">Start Now</button>
+	</div>
+	<div id="gameState">hello</div>
     <div id="points"></div>
+
+    <div id="btnHint">Hint</div>
+    <div id="btnShuttle">Shuttle</div>
     <div id="field"></div>
-    
+    <div id="showProgress">
+	    <div align="center" style="position: absolute;width:100%; top: 650px;color:white">Complete Percent</div>
+    	<div id="progress">
+    		<div id="complete"></div>
+	    </div>
+	</div>
 </body>
-
-
 </html>
