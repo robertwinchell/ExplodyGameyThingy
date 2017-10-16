@@ -1,34 +1,49 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<script data-main="scripts/main" src="scripts/lib/require.js"></script>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen,projection"/>
-</head>
+	<meta charset="utf-8" />
+	
+	<title>ExplodyGameyThingy</title>
 
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="css/game.css" />
+	<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+</head>
 <body>
 	<div id="startGame">
-		<div id="selectMode">
-			&nbsp;&nbsp;&nbsp;<input type="radio" id="time" name="s_time" checked="true" onclick="setState('selectLevelMode','false')">Time Mode<br>
-			&nbsp;&nbsp;&nbsp;<input type="radio" id="untime" name="s_time" onclick="setState('selectLevelMode','true')">Untime Mode<br>
-			<div id="selectLevelMode">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<input type="radio" id="casual" name="level" checked="true">Casual Mode<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<input type="radio" id="level" name="level">Level Mode<br>
+		<p align="center"><img src="images/banner.png" width="30%"></p>
+		<p align="center"><button id="t_casual" class="btn">Timed Casual Mode</button></p>
+		<p align="center"><button id="t_level" class="btn">Timed Level Mode</button></p>
+		<p align="center"><button id="u_casual" class="btn">Untimed Casual Mode</button></p>
+		<p align="center"><button id="u_level" class="btn">Untimed Level Mode</button></p>
+	</div>
+	<div id="content" style="display: none">
+		<div id="game_content">
+			<div id="player_info">
+				<div id="time_gauge"><div id="current_gauge"></div></div>
+				<p id="level_text">Level</p><div id="level"></div>
+				<p>Score</p><div id="total_score"><span id="current_score">0</span><br/>/<span id="goal_score">500</span></div>
+				<button id="restart_bt">Restart</button>
+				<button id="pause_bt">Pause</button>
 			</div>
+			<div id="grid"></div>
 		</div>
-		<br>
-		<button id="btnStart">Start Now</button>
 	</div>
-	<div id="gameState">hello</div>
-    <div id="points"></div>
 
-    <div id="btnHint">Hint</div>
-    <div id="btnShuttle">Shuttle</div>
-    <div id="field"></div>
-    <div id="showProgress">
-	    <div align="center" style="position: absolute;width:100%; top: 650px;color:white">Complete Percent</div>
-    	<div id="progress">
-    		<div id="complete"></div>
-	    </div>
-	</div>
+	<script type="text/javascript" src="js/util.js"></script>
+	<script type="text/javascript" src="js/game/capabilities/item.js"></script>
+	<script type="text/javascript" src="js/game/init.js"></script>
+	<script type="text/javascript" src="js/game/timer.js"></script>
+	<script type="text/javascript" src="js/game/level.js"></script>
+	<script type="text/javascript" src="js/game/hint.js"></script>
+	<script type="text/javascript" src="js/game/score.js"></script>
+	<script type="text/javascript" src="js/game/streak.js"></script>
+	<script type="text/javascript" src="js/game/bonus.js"></script>
+	<script type="text/javascript" src="js/game/classes/Gem.js"></script>
+	<script type="text/javascript" src="js/game/classes/Bomb.js"></script>
+	<script type="text/javascript" src="js/game/classes/DoubleBomb.js"></script>
+	<script type="text/javascript" src="js/game/classes/Popup.js"></script>
+	<script type="text/javascript" src="js/game/main.js"></script>
 </body>
 </html>

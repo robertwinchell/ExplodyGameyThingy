@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+html {
+	position: relative;
+	height: 100%;
+}
+
+body{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #000000;
+	font-family: 'Electrolize', 'Segoe UI', Helvetica, Arial, 'Trebuchet MS', sans-serif;
+	font-size: 14px;
+	text-align: justify;
+}
+
+#startGame{
+	width:100%;
+	padding-top: 5%;
+	align-items: center;
+}
+
+#startGame .btn{
+	width:300px;
+	height:40px;
+	border:1px solid white;
+	border-radius: 20px;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+}
+
+#startGame .btn:hover{
+	background-color: rgb(60,60,60);
+}
+
+#content{
+	position: relative;
+	padding-top: 100px;
+	width: 1000px;
+	min-height: 500px;
+	margin: auto;
+	color: #FFFFFF;
+}
+
+#site_content, #rules_content{
+	padding: 50px;
+	font-size: 16px;
+	color: #DEDEDE;
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+header{
+	padding-bottom: 30px;
+	position: relative;
+	z-index: 30;
+	background-color: #000000;
+}
+
+nav{
+	background-color: #111122;
+	border-width: 0px 2px 2px 2px;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-radius: 20px;
+}
+
+nav a{
+	display: inline-block;
+	padding: 10px 20px 15px 20px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+nav a.current_menu{
+	background-color: rgba(200, 200, 200, 0.4);
+}
+
+nav a:first-child{
+	border-top-left-radius: 20px;
+	-webkit-border-top-left-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	border-bottom-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+	-moz-border-radius-bottomleft: 20px;
+}
