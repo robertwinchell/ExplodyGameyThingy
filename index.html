@@ -21,11 +21,24 @@
 	<div id="content" style="display: none">
 		<div id="game_content">
 			<div id="player_info">
+				<div id="clockdiv">
+					<div>
+						<span class="minutes"></span>
+						<div class="smalltext">Minutes</div>
+					</div>
+					<div>
+						<span class="seconds"></span>
+						<div class="smalltext">Seconds</div>
+					</div>
+				</div>
+				<h1 id="time" style="text-align: center"></h1>
 				<div id="time_gauge"><div id="current_gauge"></div></div>
 				<p id="level_text">Level</p><div id="level"></div>
 				<p>Score</p><div id="total_score"><span id="current_score">0</span><br/>/<span id="goal_score">500</span></div>
 				<button id="restart_bt">Restart</button>
-				<button id="pause_bt">Pause</button>
+				<button id="pause_bt">Pause</button><br>
+				<button id="shuttle_bt">Shuttle</button>
+				<button id="hint_bt">Hint</button>
 			</div>
 			<div id="grid"></div>
 		</div>

@@ -5,7 +5,7 @@
  * @param {Number}	destroyedGems	The number of gems that were destroyed
  */
 Game.updateScore = function(destroyedGems) {
-	var perGem = 3 + (Game.combo == undefined ? 0 : (3 * Game.combo)),	// Each combo makes the gems worth 50 points more
+	var perGem = 10 + (Game.combo == undefined ? 0 : (10 * Game.combo)),	// Each combo makes the gems worth 50 points more
 		gain = destroyedGems * perGem,
 		gaugeSize = 0,
 		gainSpan = document.createElement('span'),
@@ -15,7 +15,7 @@ Game.updateScore = function(destroyedGems) {
 	// For a streak bigger than 3, the player gets a bonus	
 	if (destroyedGems > 3) {
 		for (var i = 0; i < destroyedGems - 3; i++) {
-			gain += 3 * (i+1);
+			gain += 5 * (i+1);
 		};
 	}
 

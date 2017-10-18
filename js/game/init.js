@@ -23,9 +23,11 @@ Game.init = function () {
 	Game.initTimer();
 
 	// We initialize the UI
-	get('#level').innerHTML = Game.level;
+	if(Game.GAME_MODE == 2 || Game.GAME_MODE == 4) get('#level').innerHTML = Game.level;
+	else get('#level').innerHTML = "Casual";
 	get('#current_score').innerHTML = Game.score.current;
-	get('#goal_score').innerHTML = Game.score.goal;
+	if(Game.GAME_MODE == 2 || Game.GAME_MODE == 4) get('#goal_score').innerHTML = Game.score.goal;
+	else get('#goal_score').innerHTML = 'Unlimit';
 	get('#restart_bt').onclick = Game.confirmRestart;
 	get('#pause_bt').onclick = Game.pause;
 

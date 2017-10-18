@@ -216,3 +216,16 @@ document.getElementById('u_level').onclick = function()
 	Game.STARTED = true;
 	Game.init();
 }
+
+document.getElementById('hint_bt').onclick = function()
+{
+	console.log("hint");
+	Game.showHint();
+}
+
+document.getElementById('shuttle_bt').onclick = function()
+{
+	console.log("shuttle");
+	Game.emptyGrid();
+	Game.createGrid();
+}
