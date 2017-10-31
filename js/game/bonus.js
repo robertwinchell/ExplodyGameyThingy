@@ -19,11 +19,11 @@ Game.winBomb = function() {
 		y = parseInt(Math.random() * Game.GRID_SIZE);
 	}while (get('#tile' + y + '_' + x) == null || get('#tile' + y + '_' + x).timer != undefined);
 	Game.winBomb(x+1, y+1);
-	bomb.style.left = ((60 * x) + (5 * (x + 1))) + 'px';
-	bomb.style.top = ((60 * y) + (5 * (y + 1))) + 'px';
+	bomb.style.left = ((Game.GEM_WIDTH * x) + (5 * (x + 1))) + 'px';
+	bomb.style.top = ((Game.GEM_HEIGHT * y) + (5 * (y + 1))) + 'px';
 	bomb.id = 'tile' + y + '_' + x;
 	itemToReplace = get('#tile' + y + '_' + x);
-	if (itemToReplace != null && itemToReplace.parentNode) {	
+	if (itemToReplace != null && itemToReplace.parentNode) {
 		get('#grid').removeChild(itemToReplace);
 	}
 	get('#grid').appendChild(bomb);
@@ -46,11 +46,11 @@ Game.winDoubleBomb = function() {
 		y = parseInt(Math.random() * Game.GRID_SIZE);
 	}while (get('#tile' + y + '_' + x) == null || get('#tile' + y + '_' + x).timer != undefined);
 	Game.winDoubleBomb(x+1, y+1);
-	dbomb.style.left = ((60 * x) + (5 * (x + 1))) + 'px';
-	dbomb.style.top = ((60 * y) + (5 * (y + 1))) + 'px';
+	dbomb.style.left = ((Game.GEM_WIDTH * x) + (5 * (x + 1))) + 'px';
+	dbomb.style.top = ((Game.GEM_HEIGHT * y) + (5 * (y + 1))) + 'px';
 	dbomb.id = 'tile' + y + '_' + x;
 	itemToReplace = get('#tile' + y + '_' + x);
-	if (itemToReplace != null && itemToReplace.parentNode) {	
+	if (itemToReplace != null && itemToReplace.parentNode) {
 		get('#grid').removeChild(itemToReplace);
 	}
 	get('#grid').appendChild(dbomb);

@@ -5,19 +5,20 @@ Game.Gem = function(x, y, value) {
 	if (this == window) {
 		throw new Error('Gem() is a constructor, you can only call it with the keyword "new"');
 	}
-	var left = ((60 * x) + (5 * (x + 1))) + 'px',
-		top = ((60 * y) + (5 * (y + 1))) + 'px',
+
+	var left = Game.leftPadding + ((Game.GEM_WIDTH * x) + (5 * (x + 1))) + 'px',
+		top = ((Game.GEM_HEIGHT * y) + (5 * (y + 1))) + 'px',
 		gem = document.createElement('span');
 
 	gem.className = 'gem item';
 	gem.val = value;
 	gem.id = 'tile' + y + '_' + x;
 	// gem.innerHTML = y+'_'+x;
-	
+
 	gem.style.top = top;
 	gem.style.left = left;
 	gem.style.backgroundImage = 'url("./images/sprites/' + value + '.png")';
-	
+
 	gem.falling = false;	// Is the element falling ?
 	gem.inStreak = false;
 	gem.isGem = true;
@@ -28,7 +29,7 @@ Game.Gem = function(x, y, value) {
 
 Game.addGemCapabilities = function(gem) {
 	addItemCapabilities(gem);	// We add useful functions relative to displayable items
-	
+
 	/**
 	 * Returns (and sets, if a value is passed as an argument) the gem's y tile value
 	 */
@@ -80,7 +81,7 @@ Game.addGemCapabilities = function(gem) {
 
 		row = gem.checkRow(true, true);
 		column = gem.checkColumn(true, true);
-		
+
 		// If we have a row of three identical gems
 		if (row.length > 1) {
 			for (var i = 0; i < row.length; i++) {
@@ -151,8 +152,8 @@ Game.addGemCapabilities = function(gem) {
 		if (top !== true && bottom !== true) {
 			return;
 		}
-		
-		var column = [];	
+
+		var column = [];
 		// Checking the gems on top (if the gem is at an extremity, don't check behind the border)
 		if (top && gem.y() > 0) {
 			column = column.concat(gem.parseNeighbours(true, -1));
@@ -207,7 +208,7 @@ Game.addGemCapabilities = function(gem) {
 			}
 
 			gem.style.backgroundImage = 'url("./images/sprites/' + gem.value() + '_explosion' + (i % 2) + '.png")';
-			i++;	
+			i++;
 		};
 
 		gem.timer = setInterval(function() {

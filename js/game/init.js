@@ -21,6 +21,8 @@ Game.init = function () {
 	Game.bonus = {};
 	Game.pauses = false;
 	Game.initTimer();
+	Game.GEM_WIDTH = 60;
+	Game.GEM_HEIGHT = 60;
 
 	// We initialize the UI
 	if(Game.GAME_MODE == 2 || Game.GAME_MODE == 4) get('#level').innerHTML = Game.level;
@@ -38,7 +40,19 @@ Game.init = function () {
  * Created the game's grid
  */
 Game.createGrid = function() {
+
 	var grid = get('#grid'), map = [], row, vGems = [], hGems = [], bg;
+
+	var gridWidth = document.querySelector('#grid').offsetWidth;
+	var gridHeight = document.querySelector('#grid').offsetHeight;
+
+	Game.GEM_HEIGHT = Math.floor(gridHeight / Game.GRID_SIZE) - 5;
+	Game.GEM_WIDTH = Math.floor(gridWidth / Game.GRID_SIZE) - 5;
+
+	Game.leftPadding = (gridWidth - (Game.GEM_WIDTH - 5) * Game.GRID_SIZE) / Game.GRID_SIZE;
+
+	console.log(Game.leftPadding);
+
 
 	for (var i = 0; i < Game.GRID_SIZE; i++) {
 		row = [];

@@ -61,7 +61,7 @@ Game.nextLevel = function() {
  * Checks if the game is over (no possibility to make a streak)
  */
 Game.checkGameOver = function() {
-	if (!Game.checkHint()) {
+	if (!Game.checkHint() && !Game.bonus.bomb && !Game.bonus.dbomb) {
 		Game.gameOver();
 	}
 };
